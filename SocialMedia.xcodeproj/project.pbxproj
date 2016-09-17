@@ -7,17 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0353BF011D8DF51000700697 /* RoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0353BF001D8DF51000700697 /* RoundView.swift */; };
 		0393501C1D8CC5B700597EA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0393501B1D8CC5B700597EA7 /* AppDelegate.swift */; };
-		0393501E1D8CC5B700597EA7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0393501D1D8CC5B700597EA7 /* ViewController.swift */; };
+		0393501E1D8CC5B700597EA7 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0393501D1D8CC5B700597EA7 /* AuthViewController.swift */; };
 		039350211D8CC5B700597EA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0393501F1D8CC5B700597EA7 /* Main.storyboard */; };
 		039350231D8CC5B700597EA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 039350221D8CC5B700597EA7 /* Assets.xcassets */; };
 		039350261D8CC5B700597EA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 039350241D8CC5B700597EA7 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0353BF001D8DF51000700697 /* RoundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundView.swift; sourceTree = "<group>"; };
 		039350181D8CC5B700597EA7 /* SocialMedia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialMedia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0393501B1D8CC5B700597EA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0393501D1D8CC5B700597EA7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0393501D1D8CC5B700597EA7 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		039350201D8CC5B700597EA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		039350221D8CC5B700597EA7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		039350251D8CC5B700597EA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -35,6 +37,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0353BEFD1D8DF4D300700697 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0353BF001D8DF51000700697 /* RoundView.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		0353BEFE1D8DF4DA00700697 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0393501D1D8CC5B700597EA7 /* AuthViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		0353BEFF1D8DF4E100700697 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		0393500F1D8CC5B700597EA7 = {
 			isa = PBXGroup;
 			children = (
@@ -54,8 +79,10 @@
 		0393501A1D8CC5B700597EA7 /* SocialMedia */ = {
 			isa = PBXGroup;
 			children = (
+				0353BEFF1D8DF4E100700697 /* Model */,
+				0353BEFE1D8DF4DA00700697 /* Controllers */,
+				0353BEFD1D8DF4D300700697 /* Views */,
 				0393501B1D8CC5B700597EA7 /* AppDelegate.swift */,
-				0393501D1D8CC5B700597EA7 /* ViewController.swift */,
 				0393501F1D8CC5B700597EA7 /* Main.storyboard */,
 				039350221D8CC5B700597EA7 /* Assets.xcassets */,
 				039350241D8CC5B700597EA7 /* LaunchScreen.storyboard */,
@@ -137,7 +164,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0393501E1D8CC5B700597EA7 /* ViewController.swift in Sources */,
+				0393501E1D8CC5B700597EA7 /* AuthViewController.swift in Sources */,
+				0353BF011D8DF51000700697 /* RoundView.swift in Sources */,
 				0393501C1D8CC5B700597EA7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -302,6 +330,7 @@
 				0393502C1D8CC5B700597EA7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
