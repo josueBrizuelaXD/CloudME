@@ -16,19 +16,25 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgTexture" translatesAutoresizingMaskIntoConstraints="NO" id="ikF-Pu-aHy"/>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ngm-bW-sCq" userLabel="authBgVisualView">
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="n8Y-YA-GKH">
-                                    <frame key="frameInset" maxX="0.5"/>
+                                    <frame key="frameInset"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Social Hero" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y27-FU-XSh">
                                             <fontDescription key="fontDescription" name="SavoyeLetPlain" family="Savoye LET" pointSize="66"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
+                                            <variation key="heightClass=regular-widthClass=compact">
+                                                <fontDescription key="fontDescription" name="SavoyeLetPlain" family="Savoye LET" pointSize="60"/>
+                                            </variation>
+                                            <variation key="heightClass=regular-widthClass=regular">
+                                                <fontDescription key="fontDescription" name="SavoyeLetPlain" family="Savoye LET" pointSize="90"/>
+                                            </variation>
                                         </label>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="K6H-L4-Yyc">
                                             <subviews>
@@ -37,12 +43,18 @@
                                                     <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                     <fontDescription key="fontDescription" name="SinhalaSangamMN" family="Sinhala Sangam MN" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <variation key="heightClass=regular-widthClass=regular">
+                                                        <fontDescription key="fontDescription" name="SinhalaSangamMN" family="Sinhala Sangam MN" pointSize="30"/>
+                                                    </variation>
                                                 </textField>
                                                 <textField opaque="NO" clipsSubviews="YES" alpha="0.5" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Password" borderStyle="roundedRect" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5zm-g4-W8Z">
                                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                     <fontDescription key="fontDescription" name="SinhalaSangamMN" family="Sinhala Sangam MN" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <variation key="heightClass=regular-widthClass=regular">
+                                                        <fontDescription key="fontDescription" name="SinhalaSangamMN" family="Sinhala Sangam MN" pointSize="30"/>
+                                                    </variation>
                                                 </textField>
                                                 <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eYR-lz-Vs0">
                                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -50,43 +62,77 @@
                                                     <state key="normal" title="Login">
                                                         <color key="titleColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                     </state>
+                                                    <variation key="heightClass=regular-widthClass=regular">
+                                                        <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="30"/>
+                                                    </variation>
                                                 </button>
                                             </subviews>
+                                            <variation key="heightClass=regular-widthClass=compact" spacing="5"/>
+                                            <variation key="heightClass=regular-widthClass=regular" spacing="30"/>
                                         </stackView>
                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="HgY-br-voH">
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vn5-gp-mPY">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="vn5-gp-mPY">
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <state key="normal" title="Forgot password?">
                                                         <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
+                                                    <variation key="heightClass=regular-widthClass=compact">
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    </variation>
+                                                    <variation key="heightClass=regular-widthClass=regular">
+                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                    </variation>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4z1-1L-Avx">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="4z1-1L-Avx">
                                                     <state key="normal" title="Sign up">
                                                         <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
+                                                    <variation key="heightClass=regular-widthClass=regular">
+                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                    </variation>
                                                 </button>
                                             </subviews>
                                         </stackView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="y27-FU-XSh" firstAttribute="leading" secondItem="n8Y-YA-GKH" secondAttribute="leading" constant="8" id="1v6-YT-r3W"/>
-                                        <constraint firstAttribute="bottom" secondItem="HgY-br-voH" secondAttribute="bottom" constant="8" id="3Si-mx-hvM"/>
-                                        <constraint firstItem="K6H-L4-Yyc" firstAttribute="top" secondItem="y27-FU-XSh" secondAttribute="bottom" constant="8" id="9kD-8V-JDP"/>
+                                        <constraint firstAttribute="bottom" secondItem="HgY-br-voH" secondAttribute="bottom" constant="32" id="3Si-mx-hvM"/>
+                                        <constraint firstItem="K6H-L4-Yyc" firstAttribute="top" secondItem="y27-FU-XSh" secondAttribute="bottom" constant="16" id="9kD-8V-JDP"/>
                                         <constraint firstItem="HgY-br-voH" firstAttribute="top" relation="greaterThanOrEqual" secondItem="K6H-L4-Yyc" secondAttribute="bottom" constant="8" id="Bmo-Eg-PYE"/>
-                                        <constraint firstItem="K6H-L4-Yyc" firstAttribute="leading" secondItem="n8Y-YA-GKH" secondAttribute="leading" constant="8" id="Dg5-WA-Pzt"/>
-                                        <constraint firstItem="y27-FU-XSh" firstAttribute="top" secondItem="n8Y-YA-GKH" secondAttribute="top" constant="16" id="JAz-vY-d2Z"/>
-                                        <constraint firstAttribute="trailing" secondItem="HgY-br-voH" secondAttribute="trailing" constant="8" id="cdR-Gf-etz"/>
+                                        <constraint firstItem="K6H-L4-Yyc" firstAttribute="leading" secondItem="n8Y-YA-GKH" secondAttribute="leading" constant="16" id="Dg5-WA-Pzt"/>
+                                        <constraint firstItem="y27-FU-XSh" firstAttribute="top" secondItem="n8Y-YA-GKH" secondAttribute="top" constant="64" id="JAz-vY-d2Z"/>
+                                        <constraint firstAttribute="trailing" secondItem="HgY-br-voH" secondAttribute="trailing" constant="16" id="cdR-Gf-etz"/>
                                         <constraint firstAttribute="trailing" secondItem="y27-FU-XSh" secondAttribute="trailing" constant="8" id="fgM-Ao-g8i"/>
-                                        <constraint firstAttribute="trailing" secondItem="K6H-L4-Yyc" secondAttribute="trailing" constant="8" id="tZm-Ju-Q0f"/>
-                                        <constraint firstItem="HgY-br-voH" firstAttribute="leading" secondItem="n8Y-YA-GKH" secondAttribute="leading" constant="8" id="wwl-kt-XLP"/>
+                                        <constraint firstAttribute="trailing" secondItem="K6H-L4-Yyc" secondAttribute="trailing" constant="16" id="tZm-Ju-Q0f"/>
+                                        <constraint firstItem="HgY-br-voH" firstAttribute="leading" secondItem="n8Y-YA-GKH" secondAttribute="leading" constant="16" id="wwl-kt-XLP"/>
                                     </constraints>
+                                    <variation key="widthClass=compact">
+                                        <mask key="constraints">
+                                            <include reference="wwl-kt-XLP"/>
+                                            <include reference="9kD-8V-JDP"/>
+                                            <include reference="Dg5-WA-Pzt"/>
+                                            <include reference="tZm-Ju-Q0f"/>
+                                        </mask>
+                                    </variation>
+                                    <variation key="heightClass=regular-widthClass=regular">
+                                        <mask key="constraints">
+                                            <include reference="3Si-mx-hvM"/>
+                                            <include reference="cdR-Gf-etz"/>
+                                            <include reference="wwl-kt-XLP"/>
+                                            <include reference="9kD-8V-JDP"/>
+                                            <include reference="Dg5-WA-Pzt"/>
+                                            <include reference="tZm-Ju-Q0f"/>
+                                            <include reference="JAz-vY-d2Z"/>
+                                        </mask>
+                                    </variation>
                                 </view>
                                 <blurEffect style="light"/>
                             </visualEffectView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstAttribute="height" secondItem="Ngm-bW-sCq" secondAttribute="height" multiplier="1.7" id="7T0-Tq-UP4"/>
                             <constraint firstItem="Ngm-bW-sCq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8oq-RG-FpM"/>
                             <constraint firstAttribute="height" secondItem="Ngm-bW-sCq" secondAttribute="height" multiplier="1.7" id="CPy-Dg-PJg"/>
                             <constraint firstAttribute="trailing" secondItem="ikF-Pu-aHy" secondAttribute="trailing" id="DrI-js-JsR"/>
@@ -96,6 +142,21 @@
                             <constraint firstAttribute="width" secondItem="Ngm-bW-sCq" secondAttribute="width" multiplier="1.2" id="oxr-ZS-Y4s"/>
                             <constraint firstItem="Ngm-bW-sCq" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="qEg-js-mP7"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="CPy-Dg-PJg"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="7T0-Tq-UP4"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <mask key="constraints">
+                                <include reference="7T0-Tq-UP4"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="xOw-EE-MwE"/>
                     <connections>
