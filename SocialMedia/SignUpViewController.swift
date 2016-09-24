@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import Firebase
 
 class SignUpViewController: UIViewController {
-    let defaultEmailTxt = "E-mail or username"
+    let defaultEmailTxt = "E-mail"
     let defaultPasswordTxt = "Password"
     let defaultRepeatPwdTxt = "Repeat password"
     
@@ -20,6 +21,31 @@ class SignUpViewController: UIViewController {
     
     //MARK: - IBActions
     @IBAction func createBtnPressed(_ sender: AnyObject) {
+        
+        guard let username = emailTxtField.text , username != defaultEmailTxt else {
+            print("Josh: not user name.....")
+            return
+        }
+        
+        guard let pass = passwordTxtField.text , pass != defaultPasswordTxt else {
+            print("Josh: not pass 1.....")
+            return
+        }
+        
+        guard let repeatedPass = repeatPwdTextField.text, repeatedPass != defaultRepeatPwdTxt else {
+            print("Josh: not pass 2 .....")
+            return
+        }
+        
+        let email = username + "@socialhero.com"
+        let password : String
+        if pass == repeatedPass {
+            password = pass
+            print("Josh: email \(email) and pass is: \(password)")
+        } else {
+            print("Josh: its not the same password")
+        }
+        
         
     }
     
@@ -34,6 +60,18 @@ class SignUpViewController: UIViewController {
         emailTxtField.delegate = self
         passwordTxtField.delegate = self
         repeatPwdTextField.delegate = self
+        
+     
+        
+        let emailLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 10, height: 30))
+        emailLabel.text = "@socialhero.com  "
+        emailLabel.textAlignment = .left
+        emailLabel.adjustsFontSizeToFitWidth = true
+        emailLabel.sizeToFit()
+        emailLabel.textColor = UIColor.white
+        emailLabel.font = UIFont(name: "Sinhala Sangam MN", size: 17)
+        emailTxtField.rightView = emailLabel
+        emailTxtField.rightViewMode = .always
     }
     
     //MARK: - Handling touches
@@ -43,6 +81,10 @@ class SignUpViewController: UIViewController {
         repeatPwdTextField.resignFirstResponder()
         
     }
+    
+    //MARK: - Helper methods
+    
+    
 }
 
 //MARK: - UITexFieldDelegate implementation
@@ -113,5 +155,13 @@ extension SignUpViewController: UITextFieldDelegate {
         default:
             return false
             }
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        print("range length: \(range.length) range location: \(range.location) and replacement string: \(string)")
+        if textField == emailTxtField {
+            
+        }
+        return true
     }
 }
