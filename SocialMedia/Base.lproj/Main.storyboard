@@ -7,16 +7,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Auth View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="AuthViewController" customModule="SocialMedia" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="SocialMedia" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgTexture" translatesAutoresizingMaskIntoConstraints="NO" id="ikF-Pu-aHy"/>
@@ -65,6 +65,9 @@
                                                     <variation key="heightClass=regular-widthClass=regular">
                                                         <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="30"/>
                                                     </variation>
+                                                    <connections>
+                                                        <action selector="loginBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9br-9b-Ofe"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <variation key="heightClass=regular-widthClass=compact" spacing="5"/>
@@ -83,6 +86,9 @@
                                                     <variation key="heightClass=regular-widthClass=regular">
                                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                     </variation>
+                                                    <connections>
+                                                        <action selector="forgotPwdPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fps-Nq-nDd"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="4z1-1L-Avx">
                                                     <state key="normal" title="Sign up">
@@ -91,6 +97,9 @@
                                                     <variation key="heightClass=regular-widthClass=regular">
                                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                     </variation>
+                                                    <connections>
+                                                        <segue destination="wWw-I6-Pd7" kind="presentation" id="ldZ-ow-cqh"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </stackView>
@@ -161,11 +170,172 @@
                     <navigationItem key="navigationItem" id="xOw-EE-MwE"/>
                     <connections>
                         <outlet property="bgVisualView" destination="Ngm-bW-sCq" id="3Ae-wY-4E3"/>
+                        <outlet property="loginButton" destination="eYR-lz-Vs0" id="Lc7-dM-dzg"/>
+                        <outlet property="passwordTxtField" destination="5zm-g4-W8Z" id="rKE-4d-5Qg"/>
+                        <outlet property="userNameTxtField" destination="77o-gz-bER" id="bsE-Qx-5jI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1076" y="137.18140929535232"/>
+        </scene>
+        <!--Sign Up View Controller-->
+        <scene sceneID="zn7-Ve-3Et">
+            <objects>
+                <viewController id="wWw-I6-Pd7" customClass="SignUpViewController" customModule="SocialMedia" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="feB-Ni-vRa"/>
+                        <viewControllerLayoutGuide type="bottom" id="4IZ-1E-abM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pEj-Zv-TME">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgTexture" translatesAutoresizingMaskIntoConstraints="NO" id="abC-hf-c7W"/>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4RX-5E-yaJ" userLabel="authBgVisualView">
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="w8V-2W-lBV">
+                                    <frame key="frameInset"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="create new user" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QYg-Zj-pTB">
+                                            <fontDescription key="fontDescription" name="SavoyeLetPlain" family="Savoye LET" pointSize="66"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                            <variation key="heightClass=regular-widthClass=compact">
+                                                <fontDescription key="fontDescription" name="SavoyeLetPlain" family="Savoye LET" pointSize="60"/>
+                                            </variation>
+                                            <variation key="heightClass=regular-widthClass=regular">
+                                                <fontDescription key="fontDescription" name="SavoyeLetPlain" family="Savoye LET" pointSize="90"/>
+                                            </variation>
+                                        </label>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Esc-5G-6jZ">
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" alpha="0.5" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="E-mail or username" borderStyle="roundedRect" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TXJ-4H-NND">
+                                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                    <fontDescription key="fontDescription" name="SinhalaSangamMN" family="Sinhala Sangam MN" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                    <variation key="heightClass=regular-widthClass=regular">
+                                                        <fontDescription key="fontDescription" name="SinhalaSangamMN" family="Sinhala Sangam MN" pointSize="30"/>
+                                                    </variation>
+                                                </textField>
+                                                <textField opaque="NO" clipsSubviews="YES" alpha="0.5" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Password" borderStyle="roundedRect" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0xL-Gc-mnD">
+                                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                    <fontDescription key="fontDescription" name="SinhalaSangamMN" family="Sinhala Sangam MN" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                                    <variation key="heightClass=regular-widthClass=regular">
+                                                        <fontDescription key="fontDescription" name="SinhalaSangamMN" family="Sinhala Sangam MN" pointSize="30"/>
+                                                    </variation>
+                                                </textField>
+                                                <textField opaque="NO" clipsSubviews="YES" alpha="0.5" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Repeat password" borderStyle="roundedRect" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m7E-7I-Bgi">
+                                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                    <fontDescription key="fontDescription" name="SinhalaSangamMN" family="Sinhala Sangam MN" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                                    <variation key="heightClass=regular-widthClass=regular">
+                                                        <fontDescription key="fontDescription" name="SinhalaSangamMN" family="Sinhala Sangam MN" pointSize="30"/>
+                                                    </variation>
+                                                </textField>
+                                                <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eKF-Mf-9S9">
+                                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="18"/>
+                                                    <state key="normal" title="Create">
+                                                        <color key="titleColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                    </state>
+                                                    <variation key="heightClass=regular-widthClass=regular">
+                                                        <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="30"/>
+                                                    </variation>
+                                                    <connections>
+                                                        <action selector="createBtnPressed:" destination="wWw-I6-Pd7" eventType="touchUpInside" id="wYX-PP-0DA"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <variation key="heightClass=regular-widthClass=compact" spacing="5"/>
+                                            <variation key="heightClass=regular-widthClass=regular" spacing="30"/>
+                                        </stackView>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jfw-ot-qMG">
+                                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="22" id="WIg-jL-Eem"/>
+                                                <constraint firstAttribute="height" constant="22" id="o9Q-w9-UlA"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                            <state key="normal" title="X">
+                                                <color key="titleColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="cancelBtnPressed:" destination="wWw-I6-Pd7" eventType="touchUpInside" id="ueP-eg-Kf9"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="QYg-Zj-pTB" secondAttribute="trailing" constant="8" id="0Ii-Zh-844"/>
+                                        <constraint firstAttribute="trailing" secondItem="jfw-ot-qMG" secondAttribute="trailing" constant="20" id="7Wl-ma-1yy"/>
+                                        <constraint firstItem="Esc-5G-6jZ" firstAttribute="leading" secondItem="w8V-2W-lBV" secondAttribute="leading" constant="16" id="Ckz-rN-1HG"/>
+                                        <constraint firstItem="Esc-5G-6jZ" firstAttribute="top" secondItem="QYg-Zj-pTB" secondAttribute="bottom" constant="16" id="DKc-mi-Lz0"/>
+                                        <constraint firstItem="jfw-ot-qMG" firstAttribute="top" secondItem="w8V-2W-lBV" secondAttribute="top" constant="20" id="JcL-2Z-9BC"/>
+                                        <constraint firstItem="QYg-Zj-pTB" firstAttribute="top" secondItem="w8V-2W-lBV" secondAttribute="top" constant="64" id="WB3-QD-gEh"/>
+                                        <constraint firstAttribute="trailing" secondItem="Esc-5G-6jZ" secondAttribute="trailing" constant="16" id="rB0-cn-aka"/>
+                                        <constraint firstItem="QYg-Zj-pTB" firstAttribute="leading" secondItem="w8V-2W-lBV" secondAttribute="leading" constant="8" id="rwE-ED-Wn2"/>
+                                    </constraints>
+                                    <variation key="widthClass=compact">
+                                        <mask key="constraints">
+                                            <include reference="Ckz-rN-1HG"/>
+                                            <include reference="DKc-mi-Lz0"/>
+                                            <include reference="rB0-cn-aka"/>
+                                        </mask>
+                                    </variation>
+                                    <variation key="heightClass=regular-widthClass=regular">
+                                        <mask key="constraints">
+                                            <include reference="WB3-QD-gEh"/>
+                                            <include reference="Ckz-rN-1HG"/>
+                                            <include reference="DKc-mi-Lz0"/>
+                                            <include reference="rB0-cn-aka"/>
+                                        </mask>
+                                    </variation>
+                                </view>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="4RX-5E-yaJ" firstAttribute="centerY" secondItem="pEj-Zv-TME" secondAttribute="centerY" id="5yL-Zl-83s"/>
+                            <constraint firstAttribute="height" secondItem="4RX-5E-yaJ" secondAttribute="height" multiplier="1.7" id="9PW-iB-gBJ"/>
+                            <constraint firstItem="abC-hf-c7W" firstAttribute="top" secondItem="pEj-Zv-TME" secondAttribute="top" id="DvJ-Y4-rWp"/>
+                            <constraint firstItem="4RX-5E-yaJ" firstAttribute="centerX" secondItem="pEj-Zv-TME" secondAttribute="centerX" id="H0P-2q-Cjd"/>
+                            <constraint firstItem="4IZ-1E-abM" firstAttribute="top" secondItem="abC-hf-c7W" secondAttribute="bottom" id="KMD-mI-RYM"/>
+                            <constraint firstAttribute="trailing" secondItem="abC-hf-c7W" secondAttribute="trailing" id="Kla-nu-gMI"/>
+                            <constraint firstAttribute="width" secondItem="4RX-5E-yaJ" secondAttribute="width" multiplier="1.2" id="LLr-rm-KPD"/>
+                            <constraint firstAttribute="height" secondItem="4RX-5E-yaJ" secondAttribute="height" multiplier="1.7" id="ZoM-sn-UHp"/>
+                            <constraint firstItem="abC-hf-c7W" firstAttribute="leading" secondItem="pEj-Zv-TME" secondAttribute="leading" id="col-Fk-7CN"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="ZoM-sn-UHp"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="9PW-iB-gBJ"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <mask key="constraints">
+                                <include reference="9PW-iB-gBJ"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" id="k45-eP-pzb"/>
+                    <connections>
+                        <outlet property="emailTxtField" destination="TXJ-4H-NND" id="Vor-ga-2Kb"/>
+                        <outlet property="passwordTxtField" destination="0xL-Gc-mnD" id="PLB-IX-ju2"/>
+                        <outlet property="repeatPwdTextField" destination="m7E-7I-Bgi" id="uZ4-ho-hrU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H7N-kp-v5f" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1862" y="340"/>
         </scene>
     </scenes>
     <resources>

@@ -9,23 +9,10 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-    
-    
-   //MARK: - IBOutlets
+   
     @IBOutlet weak var bgVisualView: UIVisualEffectView!
-    @IBOutlet weak var userNameTxtField: UITextField!
-    @IBOutlet weak var passwordTxtField: UITextField!
-    @IBOutlet weak var loginButton: UIButton!
     
-    
-    //MARK: - Actions
-    @IBAction func loginBtnPressed(_ sender: AnyObject) {
-    }
-    
-    @IBAction func forgotPwdPressed(_ sender: AnyObject) {
-    }
-    
-    //MARK: - View Lifecycle
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
