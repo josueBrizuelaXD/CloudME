@@ -51,7 +51,7 @@
                                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                     <fontDescription key="fontDescription" name="SinhalaSangamMN" family="Sinhala Sangam MN" pointSize="17"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                                                     <variation key="heightClass=regular-widthClass=regular">
                                                         <fontDescription key="fontDescription" name="SinhalaSangamMN" family="Sinhala Sangam MN" pointSize="30"/>
                                                     </variation>
@@ -173,11 +173,49 @@
                         <outlet property="loginButton" destination="eYR-lz-Vs0" id="Lc7-dM-dzg"/>
                         <outlet property="passwordTxtField" destination="5zm-g4-W8Z" id="rKE-4d-5Qg"/>
                         <outlet property="userNameTxtField" destination="77o-gz-bER" id="bsE-Qx-5jI"/>
+                        <segue destination="pgB-Cf-b2E" kind="presentation" identifier="HomeSegue" id="Crr-Qp-3fU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1076" y="137.18140929535232"/>
+        </scene>
+        <!--Home View Controller-->
+        <scene sceneID="vgh-Qq-eeG">
+            <objects>
+                <viewController id="pgB-Cf-b2E" customClass="HomeViewController" customModule="SocialMedia" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wsB-7x-vdO"/>
+                        <viewControllerLayoutGuide type="bottom" id="ozb-BO-RtC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mDc-OY-Ecb">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgTexture" translatesAutoresizingMaskIntoConstraints="NO" id="LJF-pS-tuN"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dX8-Tm-OXS">
+                                <state key="normal" title="Sign Out">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="signOutPressed:" destination="pgB-Cf-b2E" eventType="touchUpInside" id="wt3-Jj-Nc2"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dX8-Tm-OXS" firstAttribute="top" secondItem="wsB-7x-vdO" secondAttribute="bottom" id="63c-kF-ycd"/>
+                            <constraint firstItem="LJF-pS-tuN" firstAttribute="leading" secondItem="mDc-OY-Ecb" secondAttribute="leading" id="Cab-YZ-jW9"/>
+                            <constraint firstItem="LJF-pS-tuN" firstAttribute="top" secondItem="wsB-7x-vdO" secondAttribute="bottom" constant="-20" id="PBC-k8-Qc1"/>
+                            <constraint firstItem="ozb-BO-RtC" firstAttribute="top" secondItem="LJF-pS-tuN" secondAttribute="bottom" id="QPp-Jb-EnG"/>
+                            <constraint firstAttribute="trailing" secondItem="LJF-pS-tuN" secondAttribute="trailing" id="RJj-c0-tgb"/>
+                            <constraint firstAttribute="trailing" secondItem="dX8-Tm-OXS" secondAttribute="trailing" constant="16" id="clq-zJ-9Or"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tg2-s7-4B8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1914" y="82"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="zn7-Ve-3Et">
@@ -335,7 +373,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H7N-kp-v5f" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1862" y="340"/>
+            <point key="canvasLocation" x="1916" y="736"/>
         </scene>
     </scenes>
     <resources>

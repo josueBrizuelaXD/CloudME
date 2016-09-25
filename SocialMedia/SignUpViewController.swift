@@ -27,7 +27,7 @@ class SignUpViewController: UIViewController {
             return
         }
         
-        guard let pass = passwordTxtField.text , pass != defaultPasswordTxt else {
+        guard let password = passwordTxtField.text , password != defaultPasswordTxt else {
             print("Josh: not pass 1.....")
             return
         }
@@ -38,10 +38,22 @@ class SignUpViewController: UIViewController {
         }
         
         let email = username + "@socialhero.com"
-        let password : String
-        if pass == repeatedPass {
-            password = pass
+        if password == repeatedPass {
             print("Josh: email \(email) and pass is: \(password)")
+            FIRAuth.auth()?.createUser(withEmail:email, password:password) {
+                user, error in
+                if error == nil {
+                    print("Josh: user successfully created account")
+                    self.dismiss(animated: true, completion: nil)
+                } else {
+                    print("Josh: error: \(error)")
+                    if let error = error as? NSError {
+                        let dict = error.userInfo
+                        print("error reasonkey: \(dict[NSLocalizedFailureReasonErrorKey]) underlying error: \(dict[NSUnderlyingErrorKey])")
+                        
+                    }
+                }
+            }
         } else {
             print("Josh: its not the same password")
         }

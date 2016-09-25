@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		031DFF161D95F54500551432 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 031DFF151D95F54500551432 /* GoogleService-Info.plist */; };
 		031DFF181D95F9B500551432 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031DFF171D95F9B500551432 /* SignUpViewController.swift */; };
+		0343EBA01D97D177005ABCB4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0343EB9F1D97D177005ABCB4 /* HomeViewController.swift */; };
 		0353BF011D8DF51000700697 /* RoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0353BF001D8DF51000700697 /* RoundView.swift */; };
 		0393501C1D8CC5B700597EA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0393501B1D8CC5B700597EA7 /* AppDelegate.swift */; };
 		0393501E1D8CC5B700597EA7 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0393501D1D8CC5B700597EA7 /* AuthViewController.swift */; };
@@ -21,6 +22,8 @@
 /* Begin PBXFileReference section */
 		031DFF151D95F54500551432 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		031DFF171D95F9B500551432 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		0343EB9E1D97CEBC005ABCB4 /* SocialMedia.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SocialMedia.entitlements; sourceTree = "<group>"; };
+		0343EB9F1D97D177005ABCB4 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		0353BF001D8DF51000700697 /* RoundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundView.swift; sourceTree = "<group>"; };
 		039350181D8CC5B700597EA7 /* SocialMedia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialMedia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0393501B1D8CC5B700597EA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +62,7 @@
 			children = (
 				0393501D1D8CC5B700597EA7 /* AuthViewController.swift */,
 				031DFF171D95F9B500551432 /* SignUpViewController.swift */,
+				0343EB9F1D97D177005ABCB4 /* HomeViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -91,6 +95,7 @@
 		0393501A1D8CC5B700597EA7 /* SocialMedia */ = {
 			isa = PBXGroup;
 			children = (
+				0343EB9E1D97CEBC005ABCB4 /* SocialMedia.entitlements */,
 				0353BEFF1D8DF4E100700697 /* Model */,
 				0353BEFE1D8DF4DA00700697 /* Controllers */,
 				0353BEFD1D8DF4D300700697 /* Views */,
@@ -158,6 +163,11 @@
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 28QN75UWHR;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -246,6 +256,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0343EBA01D97D177005ABCB4 /* HomeViewController.swift in Sources */,
 				0393501E1D8CC5B700597EA7 /* AuthViewController.swift in Sources */,
 				0353BF011D8DF51000700697 /* RoundView.swift in Sources */,
 				031DFF181D95F9B500551432 /* SignUpViewController.swift in Sources */,
@@ -375,6 +386,7 @@
 			baseConfigurationReference = E931F71EE6D62D6FE6B8C156 /* Pods-SocialMedia.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SocialMedia/SocialMedia.entitlements;
 				DEVELOPMENT_TEAM = 28QN75UWHR;
 				INFOPLIST_FILE = SocialMedia/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -389,6 +401,7 @@
 			baseConfigurationReference = F63E4BA8A99D932203E933C1 /* Pods-SocialMedia.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SocialMedia/SocialMedia.entitlements;
 				DEVELOPMENT_TEAM = 28QN75UWHR;
 				INFOPLIST_FILE = SocialMedia/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
