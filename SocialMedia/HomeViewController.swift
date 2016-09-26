@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class HomeViewController: UITableViewController {
+class HomeViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,5 +18,16 @@ class HomeViewController: UITableViewController {
         
     }
             
-     
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "newsFeedCell", for: indexPath)
+        return cell
+    }
+    
+   
 }
