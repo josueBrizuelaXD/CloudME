@@ -1,5 +1,5 @@
 //
-//  HomeViewController.swift
+//  SearchViewController.swift
 //  SocialMedia
 //
 //  Created by Josh on 9/25/16.
@@ -7,16 +7,13 @@
 //
 
 import UIKit
-import Firebase
 
-class HomeViewController: UITableViewController {
+class SearchViewControler: UITableViewController {
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        title = "Home"
-        
+        title = "Search"
     }
-            
-     
+    
 }
