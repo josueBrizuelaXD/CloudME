@@ -10,6 +10,11 @@ import UIKit
 import Firebase
 
 class HomeViewController: UICollectionViewController {
+    var posts = [Post]()
+    
+    
+    @IBAction func addPost(_ sender: AnyObject) {
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +25,7 @@ class HomeViewController: UICollectionViewController {
             
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 5
+        
     }
     
     
