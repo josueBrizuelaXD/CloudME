@@ -12,6 +12,7 @@
 		031AAF1E1D9BFD8F001AFB93 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031AAF1D1D9BFD8F001AFB93 /* Constants.swift */; };
 		031DFF161D95F54500551432 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 031DFF151D95F54500551432 /* GoogleService-Info.plist */; };
 		031DFF181D95F9B500551432 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031DFF171D95F9B500551432 /* SignUpViewController.swift */; };
+		031EB7CB1DA051E600F6A384 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031EB7CA1DA051E600F6A384 /* PostViewController.swift */; };
 		0343EBA01D97D177005ABCB4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0343EB9F1D97D177005ABCB4 /* HomeViewController.swift */; };
 		0393501C1D8CC5B700597EA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0393501B1D8CC5B700597EA7 /* AppDelegate.swift */; };
 		0393501E1D8CC5B700597EA7 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0393501D1D8CC5B700597EA7 /* AuthViewController.swift */; };
@@ -28,6 +29,7 @@
 		031AAF1D1D9BFD8F001AFB93 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		031DFF151D95F54500551432 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		031DFF171D95F9B500551432 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		031EB7CA1DA051E600F6A384 /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		0343EB9E1D97CEBC005ABCB4 /* SocialMedia.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SocialMedia.entitlements; sourceTree = "<group>"; };
 		0343EB9F1D97D177005ABCB4 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		039350181D8CC5B700597EA7 /* SocialMedia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialMedia.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,6 +72,7 @@
 				031DFF171D95F9B500551432 /* SignUpViewController.swift */,
 				0343EB9F1D97D177005ABCB4 /* HomeViewController.swift */,
 				03DED5541D98A9CF00C7DB5A /* SearchViewController.swift */,
+				031EB7CA1DA051E600F6A384 /* PostViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				031EB7CB1DA051E600F6A384 /* PostViewController.swift in Sources */,
 				03DED5551D98A9CF00C7DB5A /* SearchViewController.swift in Sources */,
 				0343EBA01D97D177005ABCB4 /* HomeViewController.swift in Sources */,
 				0393501E1D8CC5B700597EA7 /* AuthViewController.swift in Sources */,
