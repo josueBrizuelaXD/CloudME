@@ -44,6 +44,10 @@ class SignUpViewController: UIViewController {
                 user, error in
                 if error == nil {
                     print("Josh: user successfully created account")
+                    
+                    //add user to database
+                    databaseRef.child("users").child(user!.uid).setValue(["email":email])
+                    
                     self.dismiss(animated: true, completion: nil)
                 } else {
                     print("Josh: error: \(error)")

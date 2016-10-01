@@ -10,14 +10,14 @@ import UIKit
 
 
 class Post {
-    var userID: String
-    var title: String
-    var caption: String?
+    var userID: String?
+    var caption: String
     var image: UIImage?
+    var key : String
     
-    
-    init(userId:String, title: String) {
-        self.userID = userId
-        self.title = title
+    init(key: String, caption: String) {
+       self.key = key
+       self.caption = caption
     }
+    
 }
