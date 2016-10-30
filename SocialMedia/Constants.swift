@@ -10,6 +10,5 @@ import Foundation
 import Firebase
 
 let databaseRef = FIRDatabase.database().reference()
-let storageRef = FIRStorage.storage()
-
+let storage = FIRStorage.storage()
 

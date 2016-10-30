@@ -11,13 +11,13 @@ import UIKit
 
 class Post {
     var userID: String?
-    var caption: String
-    var image: UIImage?
+    var caption: String?
+    var image: UIImage
     var key : String
     
-    init(key: String, caption: String) {
+    init(key: String, image: UIImage) {
        self.key = key
-       self.caption = caption
+       self.image = image
     }
     
 }

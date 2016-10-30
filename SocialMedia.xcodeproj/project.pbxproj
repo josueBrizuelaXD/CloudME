@@ -19,7 +19,6 @@
 		039350211D8CC5B700597EA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0393501F1D8CC5B700597EA7 /* Main.storyboard */; };
 		039350231D8CC5B700597EA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 039350221D8CC5B700597EA7 /* Assets.xcassets */; };
 		039350261D8CC5B700597EA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 039350241D8CC5B700597EA7 /* LaunchScreen.storyboard */; };
-		03DED5551D98A9CF00C7DB5A /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DED5541D98A9CF00C7DB5A /* SearchViewController.swift */; };
 		68A7D0779B4E0631D2E14DE4 /* Pods_SocialMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 608291C96A6025C1481CED10 /* Pods_SocialMedia.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,7 +38,6 @@
 		039350221D8CC5B700597EA7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		039350251D8CC5B700597EA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		039350271D8CC5B700597EA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		03DED5541D98A9CF00C7DB5A /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		608291C96A6025C1481CED10 /* Pods_SocialMedia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SocialMedia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E931F71EE6D62D6FE6B8C156 /* Pods-SocialMedia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialMedia.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SocialMedia/Pods-SocialMedia.debug.xcconfig"; sourceTree = "<group>"; };
 		F63E4BA8A99D932203E933C1 /* Pods-SocialMedia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialMedia.release.xcconfig"; path = "Pods/Target Support Files/Pods-SocialMedia/Pods-SocialMedia.release.xcconfig"; sourceTree = "<group>"; };
@@ -71,7 +69,6 @@
 				0393501D1D8CC5B700597EA7 /* AuthViewController.swift */,
 				031DFF171D95F9B500551432 /* SignUpViewController.swift */,
 				0343EB9F1D97D177005ABCB4 /* HomeViewController.swift */,
-				03DED5541D98A9CF00C7DB5A /* SearchViewController.swift */,
 				031EB7CA1DA051E600F6A384 /* PostViewController.swift */,
 			);
 			name = Controllers;
@@ -269,7 +266,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				031EB7CB1DA051E600F6A384 /* PostViewController.swift in Sources */,
-				03DED5551D98A9CF00C7DB5A /* SearchViewController.swift in Sources */,
 				0343EBA01D97D177005ABCB4 /* HomeViewController.swift in Sources */,
 				0393501E1D8CC5B700597EA7 /* AuthViewController.swift in Sources */,
 				030EE9771D99B9BC00F34E2C /* PostCollectionViewCell.swift in Sources */,
