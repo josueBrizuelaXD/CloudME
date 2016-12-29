@@ -170,7 +170,7 @@
 				TargetAttributes = {
 					039350171D8CC5B700597EA7 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 28QN75UWHR;
+						DevelopmentTeam = LY5RWPR92L;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
@@ -399,8 +399,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = SocialMedia/SocialMedia.entitlements;
-				DEVELOPMENT_TEAM = 28QN75UWHR;
+				DEVELOPMENT_TEAM = LY5RWPR92L;
 				INFOPLIST_FILE = SocialMedia/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pablojbrizuelag.SocialMedia;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -414,8 +415,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = SocialMedia/SocialMedia.entitlements;
-				DEVELOPMENT_TEAM = 28QN75UWHR;
+				DEVELOPMENT_TEAM = LY5RWPR92L;
 				INFOPLIST_FILE = SocialMedia/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pablojbrizuelag.SocialMedia;
 				PRODUCT_NAME = "$(TARGET_NAME)";

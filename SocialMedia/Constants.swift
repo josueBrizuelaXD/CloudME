@@ -7,7 +7,8 @@
 //
 
 import Foundation
-import Firebase
+import FirebaseDatabase
+import FirebaseStorage
 
 let databaseRef = FIRDatabase.database().reference()
 let storage = FIRStorage.storage()

@@ -28,7 +28,7 @@ class HomeViewController: UICollectionViewController {
                     
                     var i = 1
                     //add observer to data changes
-                    let _ =   databaseRef.child("users").child(user.uid).child("posts").observe(FIRDataEventType.childAdded, with: {
+                    let _ =   databaseRef.child("users").child(user.uid).child("posts").observe(.childAdded, with: {
                         snapshot in
                         
                         print("times called \(i)")
