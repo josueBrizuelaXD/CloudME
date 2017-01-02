@@ -33,7 +33,7 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Social Hero" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y27-FU-XSh">
-                                            <rect key="frame" x="8" y="64" width="296" height="72"/>
+                                            <rect key="frame" x="8" y="64" width="296" height="71.5"/>
                                             <fontDescription key="fontDescription" name="SavoyeLetPlain" family="Savoye LET" pointSize="66"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -45,7 +45,7 @@
                                             </variation>
                                         </label>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="K6H-L4-Yyc">
-                                            <rect key="frame" x="16" y="152" width="280" height="127"/>
+                                            <rect key="frame" x="16" y="151.5" width="280" height="127"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" alpha="0.5" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Username" borderStyle="roundedRect" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="77o-gz-bER">
                                                     <rect key="frame" x="0.0" y="0.0" width="280" height="39"/>
@@ -89,7 +89,7 @@
                                             <rect key="frame" x="16" y="330" width="280" height="30"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="vn5-gp-mPY">
-                                                    <rect key="frame" x="0.0" y="1" width="133" height="30"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="133" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <state key="normal" title="Forgot password?">
                                                         <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -105,7 +105,7 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="4z1-1L-Avx">
-                                                    <rect key="frame" x="147" y="1" width="133" height="30"/>
+                                                    <rect key="frame" x="147" y="0.0" width="133" height="30"/>
                                                     <state key="normal" title="Sign up">
                                                         <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
@@ -237,7 +237,7 @@
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="newsFeedCell" id="oS6-L7-ASO" customClass="PostCollectionViewCell" customModule="SocialMedia" customModuleProvider="target">
-                                <rect key="frame" x="3" y="0.0" width="370" height="380"/>
+                                <rect key="frame" x="2.5" y="0.0" width="370" height="380"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="370" height="380"/>
@@ -545,6 +545,9 @@
                                         <color key="backgroundColor" red="0.67254370689999998" green="0.79304841420000005" blue="0.93081773479999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <state key="normal" title="Edit Profile"/>
+                                        <connections>
+                                            <action selector="editProfileBtn:" destination="o9M-jc-IYi" eventType="touchUpInside" id="8Rz-nj-C0B"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -572,7 +575,7 @@
                                     <inset key="sectionInset" minX="16" minY="16" maxX="16" maxY="16"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="userProfileCell" id="lsr-2I-j8k">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="userProfileCell" id="lsr-2I-j8k" customClass="UserProfileCollectionViewCell" customModule="SocialMedia" customModuleProvider="target">
                                         <rect key="frame" x="16" y="16" width="100" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -591,6 +594,9 @@
                                             <constraint firstItem="VrD-U5-UNr" firstAttribute="leading" secondItem="lsr-2I-j8k" secondAttribute="leading" id="qcs-el-SuL"/>
                                             <constraint firstAttribute="bottom" secondItem="VrD-U5-UNr" secondAttribute="bottom" id="rjJ-9Q-QgJ"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="postImage" destination="VrD-U5-UNr" id="FOf-Z7-6Ov"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -623,6 +629,11 @@
                     <navigationItem key="navigationItem" title="User Name" id="K5X-Hj-MVb"/>
                     <connections>
                         <outlet property="collectionView" destination="cTS-TQ-c0W" id="lxC-FE-Xe7"/>
+                        <outlet property="followersLbl" destination="4nv-dR-vQU" id="Aog-qI-PKK"/>
+                        <outlet property="followingLbl" destination="Nod-Pk-Fpy" id="ULP-9b-pUX"/>
+                        <outlet property="postNumberLbl" destination="cxL-Pl-cJi" id="TMc-SQ-Mkg"/>
+                        <outlet property="profilePic" destination="1Fm-MG-irB" id="Atb-9M-RQ2"/>
+                        <outlet property="userNameLabel" destination="JT8-xz-VtZ" id="GWP-mK-WNp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VN7-sf-a8b" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -651,7 +662,7 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="create new user" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QYg-Zj-pTB">
-                                            <rect key="frame" x="8" y="64" width="296" height="72"/>
+                                            <rect key="frame" x="8" y="64" width="296" height="71.5"/>
                                             <fontDescription key="fontDescription" name="SavoyeLetPlain" family="Savoye LET" pointSize="66"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
@@ -663,7 +674,7 @@
                                             </variation>
                                         </label>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Esc-5G-6jZ">
-                                            <rect key="frame" x="16" y="152" width="280" height="171"/>
+                                            <rect key="frame" x="16" y="151.5" width="280" height="171"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" alpha="0.5" contentMode="scaleToFill" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="E-mail" borderStyle="roundedRect" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="TXJ-4H-NND">
                                                     <rect key="frame" x="0.0" y="0.0" width="280" height="39"/>

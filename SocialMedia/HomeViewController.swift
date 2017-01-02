@@ -24,7 +24,7 @@ class HomeViewController: UICollectionViewController {
                 error in
                 
                 if error == nil {
-                    print("success changing name name: \(user.displayName)")
+                    print("success changing name : \(user.displayName)")
                     
                     var i = 1
                     //add observer to data changes
