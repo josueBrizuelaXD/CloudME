@@ -44,6 +44,9 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        FIRDatabase.database().persistenceEnabled = true
+        
         bgVisualView.layer.cornerRadius = 20.0
         bgVisualView.clipsToBounds = true
             }

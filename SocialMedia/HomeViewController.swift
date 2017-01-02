@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import SDWebImage
 
 class HomeViewController: UICollectionViewController {
     var posts = [Post]()
@@ -34,28 +35,40 @@ class HomeViewController: UICollectionViewController {
                         print("times called \(i)")
                         i += 1
                 
+                        if let dict = snapshot.value as? [String: Any] {
+                            if let key = dict["key"] as? String, let picturePath = dict["picturePath"] as? String {
                                 
-                                if let dict = snapshot.value as? [String: Any] {
-                                    if let key = dict["key"] as? String, let picturePath = dict["picturePath"] as? String {
+                                let pathRef = storage.reference(withPath: picturePath)
+                                
+                                
+                                print("pathRef is \(pathRef)")
+                                SDImageCache.shared().queryDiskCache(forKey: key, done: {
+                                    image , imageCachedType in
+                                    
+                                    if image != nil {
                                         
-                                        let pathRef = storage.reference(withPath: picturePath)
+                                        let post = Post(key: key, image: image!)
                                         
-                                        print("pathRef is \(pathRef)")
+                                        self.posts.append(post)
                                         
+                                        print("image found in \(imageCachedType)")
+                                        
+                                    } else {
+                                        
+                                        //download the image if not cached.
                                         pathRef.data(withMaxSize: 1024 * 1024 * 6, completion: {
                                             data, error in
                                             
                                             if error == nil {
                                                 print("data downloaded")
-                                            let image = UIImage(data: data!)!
+                                                let image = UIImage(data: data!)!
+                                                SDImageCache.shared().store(image, forKey: key)
                                                 let post = Post(key: key, image: image)
-                                                if let caption = dict["caption"] as? String {
-                                                    post.caption = caption
-                                                }
+                                                
                                                 self.posts.append(post)
-                                                self.collectionView?.reloadData()
-
-
+                                                
+                                                
+                                                
                                             } else {
                                                 print("Josh: error downloading the image \(error)")
                                             }
@@ -63,8 +76,14 @@ class HomeViewController: UICollectionViewController {
                                         
                                         
                                     }
+                                    
+                                    self.collectionView?.reloadData()
+                                    
+                                })
+                                
+                                
+                            }
                         }
-
                 
                 })
                     

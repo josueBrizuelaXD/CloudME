@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import SDWebImage
 
 class UserProfileViewController: UIViewController {
     var posts = [Post]()
@@ -45,32 +46,57 @@ class UserProfileViewController: UIViewController {
                         
                         let pathRef = storage.reference(withPath: picturePath)
                         
-                        print("pathRef is \(pathRef)")
                         
-                        pathRef.data(withMaxSize: 1024 * 1024 * 6, completion: {
-                            data, error in
+                        print("pathRef is \(pathRef)")
+                        SDImageCache.shared().queryDiskCache(forKey: key, done: {
+                            image , imageCachedType in
                             
-                            if error == nil {
-                                print("data downloaded")
-                                let image = UIImage(data: data!)!
-                                let post = Post(key: key, image: image)
-                               
-                                self.posts.append(post)
-                                self.collectionView?.reloadData()
+                            if image != nil {
                                 
+                                let post = Post(key: key, image: image!)
+                                
+                                self.posts.append(post)
+                                
+                                print("image found in \(imageCachedType)")
                                 
                             } else {
-                                print("Josh: error downloading the image \(error)")
+                                
+                                //download the image if not cached.
+                                pathRef.data(withMaxSize: 1024 * 1024 * 6, completion: {
+                                    data, error in
+                                    
+                                    if error == nil {
+                                        print("data downloaded")
+                                        let image = UIImage(data: data!)!
+                                        SDImageCache.shared().store(image, forKey: key)
+                                        let post = Post(key: key, image: image)
+                                        
+                                        self.posts.append(post)
+                                        
+                                        
+                                        
+                                    } else {
+                                        print("Josh: error downloading the image \(error)")
+                                    }
+                                })
+
+                                
                             }
+                            
+                            self.collectionView?.reloadData()
+
                         })
                         
-                        
+
                     }
                 }
+                
+
                 
             })
             
         }
+        
     }
     
 }
