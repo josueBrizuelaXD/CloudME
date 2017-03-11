@@ -23,7 +23,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgTexture" translatesAutoresizingMaskIntoConstraints="NO" id="ikF-Pu-aHy">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LoginScreen" translatesAutoresizingMaskIntoConstraints="NO" id="ikF-Pu-aHy">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ngm-bW-sCq" userLabel="authBgVisualView">
@@ -237,7 +237,7 @@
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="newsFeedCell" id="oS6-L7-ASO" customClass="PostCollectionViewCell" customModule="SocialMedia" customModuleProvider="target">
-                                <rect key="frame" x="2.5" y="0.0" width="370" height="380"/>
+                                <rect key="frame" x="3" y="0.0" width="370" height="380"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="370" height="380"/>
@@ -574,6 +574,10 @@
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="16" minY="16" maxX="16" maxY="16"/>
                                 </collectionViewFlowLayout>
+                                <activityIndicatorView key="backgroundView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" id="fCE-RT-S2Y">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="408"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </activityIndicatorView>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="userProfileCell" id="lsr-2I-j8k" customClass="UserProfileCollectionViewCell" customModule="SocialMedia" customModuleProvider="target">
                                         <rect key="frame" x="16" y="16" width="100" height="100"/>
@@ -628,6 +632,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="User Name" id="K5X-Hj-MVb"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="fCE-RT-S2Y" id="S26-ct-wXa"/>
                         <outlet property="collectionView" destination="cTS-TQ-c0W" id="lxC-FE-Xe7"/>
                         <outlet property="followersLbl" destination="4nv-dR-vQU" id="Aog-qI-PKK"/>
                         <outlet property="followingLbl" destination="Nod-Pk-Fpy" id="ULP-9b-pUX"/>
@@ -830,6 +835,7 @@
     </scenes>
     <resources>
         <image name="Iceland 001" width="300" height="200"/>
+        <image name="LoginScreen" width="375" height="667"/>
         <image name="add-image" width="88" height="88"/>
         <image name="bgTexture" width="1667" height="1667"/>
         <image name="empty-heart" width="70" height="70"/>

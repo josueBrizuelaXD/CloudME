@@ -56,7 +56,7 @@ class LoginViewController: UIViewController {
         
         FIRAuth.auth()?.addStateDidChangeListener { auth, user in
             if let user = user {
-               self.performSegue(withIdentifier: "HomeSegue", sender: nil)
+//               self.performSegue(withIdentifier: "HomeSegue", sender: nil)
                 print("Josh: user is signed in with \(user.email)")
             } else {
                 //user not signed in
