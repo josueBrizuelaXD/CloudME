@@ -13,7 +13,7 @@ class LoginViewController: UIViewController {
     
     
    //MARK: - IBOutlets
-    @IBOutlet weak var bgVisualView: UIVisualEffectView!
+    @IBOutlet weak var txtFieldsContainer: UIView!
     @IBOutlet weak var userNameTxtField: UITextField!
     @IBOutlet weak var passwordTxtField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
@@ -47,8 +47,10 @@ class LoginViewController: UIViewController {
         
 //        FIRDatabase.database().persistenceEnabled = true
         
-        bgVisualView.layer.cornerRadius = 20.0
-        bgVisualView.clipsToBounds = true
+        txtFieldsContainer.layer.cornerRadius = txtFieldsContainer.bounds.height / 10
+        txtFieldsContainer.layer.borderWidth = 0.5
+        txtFieldsContainer.layer.borderColor = UIColor.white.cgColor
+        txtFieldsContainer.clipsToBounds = true
             }
 
     override func viewDidAppear(_ animated: Bool) {

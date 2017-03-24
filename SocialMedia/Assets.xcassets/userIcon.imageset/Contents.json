@@ -2,15 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "70743-OD11UT-341.jpg",
+      "filename" : "User Icon.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "User Icon@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
+      "filename" : "User Icon@3x.png",
       "scale" : "3x"
     }
   ],
