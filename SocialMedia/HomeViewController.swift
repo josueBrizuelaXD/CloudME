@@ -18,6 +18,21 @@ class HomeViewController: UICollectionViewController {
         
         title = "Home"
         
+        //add navigation bar shadow
+        let navigationBar = navigationController!.navigationBar
+        navigationBar.layer.shadowColor = UIColor.black.cgColor
+        navigationBar.layer.shadowOffset = CGSize(width: 0, height: 3)
+        navigationBar.layer.shadowRadius = 2
+        navigationBar.layer.shadowOpacity = 0.6
+        navigationBar.layer.masksToBounds = false
+        
+        //set the collectionview cell size and spacing
+        let flow = collectionView!.collectionViewLayout as! UICollectionViewFlowLayout
+        flow.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0)
+        let width = UIScreen.main.bounds.size.width
+        flow.itemSize = CGSize(width: width, height: 400)
+        flow.minimumLineSpacing = 30
+        
         if let user = FIRAuth.auth()?.currentUser {
             let request = user.profileChangeRequest()
             request.displayName = "josue"
@@ -103,12 +118,18 @@ class HomeViewController: UICollectionViewController {
         
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let itemWidth = collectionView.bounds.width
+        let itemHeight = collectionView.bounds.height
+        return CGSize(width: itemWidth, height: itemHeight)
+    }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "newsFeedCell", for: indexPath) as! PostCollectionViewCell
         let post = posts[indexPath.row]
         cell.postImage.image = post.image
+     
         if let caption = post.caption {
             cell.captionLabel.text = caption
         }

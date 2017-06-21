@@ -15,6 +15,7 @@ class UserProfileViewController: UIViewController {
     
     
     //MARK: IBOutlets
+    
     @IBOutlet weak var profilePic: UIImageView!
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var postNumberLbl: UILabel!
@@ -22,21 +23,41 @@ class UserProfileViewController: UIViewController {
     @IBOutlet weak var followingLbl: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     
     @IBAction func editProfileBtn(_ sender: Any) {
     }
     
+    @IBAction func signout(_ sender: Any) {
+        
+        do {
+            try FIRAuth.auth()?.signOut()
+            dismiss(animated: true, completion: nil)
+        } catch let error {
+           print("error: \(error)")
+        }
+        
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        profilePic.layer.cornerRadius = profilePic.bounds.size.height / 2
-        profilePic.clipsToBounds = true
+       
         
         collectionView.delegate = self
         collectionView.dataSource = self
+        let flow = collectionView!.collectionViewLayout as! UICollectionViewFlowLayout
+        flow.sectionInset = UIEdgeInsetsMake(-64, 0, 0, 0)
+        let width = UIScreen.main.bounds.size.width
+        flow.itemSize = CGSize(width: width, height: 400)
+        flow.minimumInteritemSpacing = 3
+        flow.minimumLineSpacing = 3
+        
+        //round the profile pic corners
+        profilePic.layer.cornerRadius = profilePic.frame.width / 2
+        profilePic.layer.borderWidth = 6
+        profilePic.layer.borderColor = UIColor.white.cgColor
         
         //get the user first , so we can retrive the pics.
         if let user = FIRAuth.auth()?.currentUser {
@@ -45,12 +66,7 @@ class UserProfileViewController: UIViewController {
             databaseRef.child("users").child(user.uid).child("posts").observe(.value, with: {
                 snapshot in
                 print("Josh: values are \(snapshot.childrenCount)")
-                
-                
-                    self.activityIndicator.startAnimating()
-                    
-                
-                
+     
                 var i = 0
                 for child  in snapshot.children {
                     i += 1
@@ -74,8 +90,7 @@ class UserProfileViewController: UIViewController {
                                         let post = Post(key: postKey, image: image!)
                                         
                                         self.posts.append(post)
-                                        self.activityIndicator.hidesWhenStopped = true
-                                        self.activityIndicator.stopAnimating()
+                                       
 
                                         self.collectionView.reloadData()
                                         
@@ -94,8 +109,7 @@ class UserProfileViewController: UIViewController {
                                                 let post = Post(key: postKey, image: image)
                                                 
                                                 self.posts.append(post)
-                                                self.activityIndicator.hidesWhenStopped = true
-                                                self.activityIndicator.stopAnimating()
+                                               
 
                                                 self.collectionView.reloadData()
                                                 
@@ -132,70 +146,6 @@ class UserProfileViewController: UIViewController {
                 
             })
             
-            //
-            //            let _ = databaseRef.child("users").child(user.uid).child("posts").observe(.childAdded, with: {
-            //
-            //                snapshot in
-            //
-            //                print("Josh: firebase method called")
-            //
-            //                if let dict = snapshot.value as? [String: Any] {
-            //                    if let key = dict["key"] as? String, let picturePath = dict["picturePath"] as? String {
-            //
-            //                        let pathRef = storage.reference(withPath: picturePath)
-            //
-            //
-            //                        print("pathRef is \(pathRef)")
-            //                        SDImageCache.shared().queryDiskCache(forKey: key, done: {
-            //                            image , imageCachedType in
-            //
-            //                            if image != nil {
-            //
-            //                                let post = Post(key: key, image: image!)
-            //
-            //                                self.posts.append(post)
-            //
-            //                                print("image found in \(imageCachedType)")
-            //
-            //                            } else {
-            //
-            //                                //download the image if not cached.
-            //                                pathRef.data(withMaxSize: 1024 * 1024 * 6, completion: {
-            //                                    data, error in
-            //
-            //                                    if error == nil {
-            //                                        print("data downloaded")
-            //                                        let image = UIImage(data: data!)!
-            //                                        SDImageCache.shared().store(image, forKey: key)
-            //                                        let post = Post(key: key, image: image)
-            //
-            //                                        self.posts.append(post)
-            //
-            //
-            //
-            //                                    } else {
-            //                                        print("Josh: error downloading the image \(error)")
-            //                                    }
-            //                                })
-            //
-            //
-            //                            }
-            //
-            //
-            //
-            //                            //  self.collectionView?.reloadData()
-            //
-            //
-            //
-            //                        })
-            //
-            //
-            //                    }
-            //                }
-            //
-            //
-            //                
-            //            })
             
         }
         
